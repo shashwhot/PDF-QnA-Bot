@@ -14,22 +14,14 @@ import os
  
 # Sidebar contents
 with st.sidebar:
-    st.title('🤗💬 LLM Chat App')
-    st.markdown('''
-    ## About
-    This app is an LLM-powered chatbot built using:
-    - [Streamlit](https://streamlit.io/)
-    - [LangChain](https://python.langchain.com/)
-    - [OpenAI](https://platform.openai.com/docs/models) LLM model
- 
-    ''')
+    st.title('PDF QnA Bot')
+    
     add_vertical_space(5)
-    st.write('Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)')
  
 load_dotenv()
  
 def main():
-    st.header("Chat with PDF 💬")
+    st.header("PDF QnA Bot 💬")
  
  
     # upload a PDF file
