@@ -1,6 +1,6 @@
 ﻿streamlit
 pypdf2
-langchain
+langchain-openai
 python-dotenv
 faiss-cpu
 openai
