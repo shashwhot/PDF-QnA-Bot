@@ -15,8 +15,6 @@ import os
 # Sidebar contents
 with st.sidebar:
     st.title('PDF QnA Bot')
-    
-    add_vertical_space(5)
  
 load_dotenv()
  
