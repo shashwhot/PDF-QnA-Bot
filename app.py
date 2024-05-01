@@ -3,7 +3,7 @@ import os
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
+from langchain.embeddings.huggingface import HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS #facebook AI similarity search
 from langchain.chains.question_answering import load_qa_chain
 from langchain import HuggingFaceHub
@@ -32,7 +32,7 @@ def main():
         chunks = text_splitter.split_text(text)
 
         # create embedding
-        embeddings = HuggingFaceEmbeddings()
+        embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
 
         knowledge_base = FAISS.from_texts(chunks,embeddings)
 
