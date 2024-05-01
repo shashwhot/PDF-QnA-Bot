@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddingw import HuggingInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
@@ -34,7 +34,7 @@ def main():
       chunks = text_splitter.split_text(text)
       
       # create embeddings
-      embeddings = OpenAIEmbeddings()
+      embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
       knowledge_base = FAISS.from_texts(chunks, embeddings)
       
       # show user input
